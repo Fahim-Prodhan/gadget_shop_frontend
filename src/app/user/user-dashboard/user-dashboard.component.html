@@ -1,0 +1,135 @@
+<div class="bootstrap-wrapper" style="background-color: #18191A;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            <h1 class="name">
+                <mat-icon>
+                    <i class="fa-solid fa-user-tie"></i>
+                </mat-icon> 
+                {{_login.getUser().firstName}}  {{_login.getUser().lastName}}
+            </h1>
+        </div>
+        <div class="col-md-12"></div>
+        <div class="col-md-3 offset-md-1">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="u-title">
+                  <h1>My Orders</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>total order</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1>{{orderCount}}</h1>
+            </mat-card-content>
+  
+            <mat-card-actions>
+              <button [routerLink]="'/user/userOrders'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+  
+        <div class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="b-title">
+                  <h1>My Carts</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Carts</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1>{{cartCount}}</h1>
+            </mat-card-content>
+            <mat-card-actions>
+              <button [routerLink]="'/user/cart'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="s-title">
+                  <h1>Edit Profile</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Schedules</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1></h1>
+            </mat-card-content>
+            <mat-card-actions>
+              <button [routerLink]="'/admin/schedule'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col-md-3 offset-md-1 mt-15">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="c-title">
+                  <h1>Customers</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Customers</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1></h1>
+            </mat-card-content>
+  
+            <mat-card-actions>
+              <button [routerLink]="'/admin/customer'">View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <!-- <div class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="title">
+                  <h1>Bus seats</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Seats</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1></h1>
+            </mat-card-content>
+  
+            <mat-card-actions>
+              <button [routerLink]="'/admin/schedule'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title class="r-title">
+                  <h1>Bus Routes</h1>
+                </mat-card-title>
+  
+                <mat-card-subtitle>Total Routes</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="content">
+              <h1></h1>
+            </mat-card-content>
+  
+            <mat-card-actions>
+              <button [routerLink]="'/admin/routes'" >View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  

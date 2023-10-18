@@ -1,0 +1,77 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <mat-card class="title-mat">
+
+          <mat-card-title class="card-title">All Categories List</mat-card-title>
+
+        </mat-card>
+        <!-- <mat-form-field class="filter">
+                    <mat-label>Filter</mat-label>
+                    <input [(ngModel)]="searchText" matInput placeholder="search" #input>
+                  </mat-form-field> -->
+
+      </div>
+      <div class="col-md-12 ">
+
+        <button style="background-color: #474a6f; color:	#e4e6eb" (click)="openAddForm()" mat-raised-button
+          class="demo-button">
+          <mat-icon>add_circle</mat-icon> Add Category
+        </button>
+
+
+        <div class="table-div">
+          <table class="table-mat">
+            <tr>
+              <th>Serial No</th>
+              <th>Title</th>
+              <th>Update</th>
+              <th>Delete</th>
+              <!-- <th>Add Subcategory</th> -->
+              <th>Subcategory</th>
+  
+            </tr>
+            <tr *ngFor="let c of categories | paginate: { itemsPerPage: pageSize, currentPage: page } ; let i = index">
+              <td>{{i+1}}</td>
+  
+              <td>{{c.title}}</td>
+              <td>
+                <button color="primary" mat-raised-button (click)=" openUpdateForm (c.categoryId)" class="edit-button">
+                  Edit<mat-icon>edit</mat-icon>
+                </button>
+              </td>
+  
+              <td>
+                <button color="warn" mat-raised-button (click)="deleteCategory(c.categoryId)">
+                  Delete <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+              <!-- <td>
+                              <button 
+                              [routerLink]="'/admin/subcategories/'+c.categoryId"
+                              color="accent"
+                              mat-raised-button 
+                               >
+                                 Add <mat-icon>add_circle</mat-icon> 
+                              </button>
+                          </td> -->
+              <td>
+                <button [routerLink]="'/admin/subcategories/'+c.categoryId"
+                  style="background-color: #008c36; color:	#e4e6eb" mat-raised-button>
+                  View <mat-icon>visibility</mat-icon>
+                </button>
+              </td>
+  
+            </tr>
+          </table>
+        </div>
+
+
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+      </div>
+    </div>
+
+  </div>
+</div>

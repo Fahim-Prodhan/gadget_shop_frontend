@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {  
+    background-color:#18191A;
+    color: #FFFFFF;
+    width: 100%;  
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}

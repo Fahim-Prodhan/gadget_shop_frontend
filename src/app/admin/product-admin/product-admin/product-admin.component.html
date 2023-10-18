@@ -1,0 +1,76 @@
+<div class="bootstrap-wrapper">
+    <div class="row">
+
+        <!-- {{subcategory | json}} -->
+        <div class="col-md-12">
+            <mat-card class="title-mat">
+                <mat-card-title class="card-title">All <b style="color: rgb(154, 2, 255);font-size:22px">{{subcategory.name}}</b> List</mat-card-title>
+            </mat-card>
+            <!-- <mat-form-field class="filter">
+                    <mat-label>Filter</mat-label>
+                    <input [(ngModel)]="searchText" matInput placeholder="search" #input>
+                  </mat-form-field> -->
+
+                  <button
+                  [routerLink]="'/admin/product/add/'+subCategoryId"
+                    style="background-color: #474a6f; color:#e4e6eb" 
+                     mat-raised-button
+                    class="demo-button">
+                  <mat-icon>add_circle</mat-icon> Add Product
+                </button>
+                <div class="table-div">
+                    <table class="table-mat">
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Regular Price</th>
+                            <th>Discount Price</th>
+                            <th>Quantity</th>
+                            <th>Images</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                           
+                        </tr>
+                        <tr
+                            *ngFor="let p of products | paginate: { itemsPerPage: pageSize, currentPage: page } ; let i = index">
+                            <td>{{p.productName}}</td>
+                            <td>{{p.regularPrice}} Taka</td>
+                            <td>{{p.discountPrice}} Taka</td>
+                            <td>{{p.quantity}}</td>
+                            <td>
+                                <button 
+                                    color="accent"
+                                    mat-button
+                                    (click)="openImage(p)"
+                                    >
+                                    <mat-icon>image</mat-icon>
+                                </button>
+                            </td>
+                            <td>
+                                <button
+                                    color="primary" 
+                                    mat-raised-button 
+                                    class="edit-button"
+                                    (click)="editProduct(p.productId)"
+                                    >
+                                    Edit<mat-icon>edit</mat-icon>
+                                </button>
+                            </td>
+        
+                            <td>
+                                <button color="warn" mat-raised-button (click)="deleteProduct(p.productId)">
+                                    Delete <mat-icon>delete</mat-icon>
+                                </button>
+                            </td>
+                           
+        
+        
+                        </tr>
+                    </table>
+                </div>
+
+
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+        </div>
+    </div>
+</div>

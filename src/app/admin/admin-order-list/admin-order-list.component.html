@@ -1,0 +1,65 @@
+<div class="bootstrap-wrapper">
+
+      <div class="row">
+        <div class="col-md-12">
+  
+          <mat-card class="title-mat">
+  
+            <mat-card-title class="card-title">All Order List</mat-card-title>
+  
+          </mat-card>
+          <!-- <mat-form-field class="filter">
+                      <mat-label>Filter</mat-label>
+                      <input [(ngModel)]="searchText" matInput placeholder="search" #input>
+                    </mat-form-field> -->
+  
+        </div>
+        <div class="col-md-12 ">
+  
+          <mat-button-toggle-group style="margin: 10px;" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="allOrders" (click)="getAllOrdersForAdmin('allOrders')">All</mat-button-toggle>
+            <mat-button-toggle value="Placed" (click)="getAllOrdersForAdmin('Placed')">Placed</mat-button-toggle>
+            <mat-button-toggle value="Delivered" (click)="getAllOrdersForAdmin('Delivered')">Delivered</mat-button-toggle>
+          </mat-button-toggle-group>
+  
+  
+          <div class="table-div">
+            <table >
+              <tr>
+                  <th>Serial</th>
+                  <th>Customer Name</th>
+                  <th>Contact Number</th>
+                  <th>Product Name</th>
+                  <th>Date</th>
+                  <th>Address</th>
+                  <th>Amount</th>
+                  <th>Quantity</th>
+                  <th>Status</th> 
+                  <th>Delivery</th> 
+    
+              </tr>
+              <tr *ngFor="let o of orderlist | paginate: { itemsPerPage: pageSize, currentPage: page } ; let i = index">
+                <td>{{i+1}}</td> 
+                <td>{{o.orderFullName}}</td>
+                <td>{{o.orderContactNumber}}</td>
+                <td>{{o.product.productName}}</td>
+                <td>{{o.orderDate}}</td>
+                <td>{{o.orderAddress1}}, {{o.orderAddress2}}</td>
+                <td>{{o.orderAmount}} TK</td>
+                <td>{{o.orderQuantity}} </td>
+                <td>{{o.orderStatus}} </td>
+                <td>
+                  <button *ngIf="o.orderStatus=='Placed'" (click)="markAsDelivered(o.orderId)" color="primary" mat-raised-button class="edit-button">
+                   <mat-icon>done</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+  
+  
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+      </div>
+  
+    </div>

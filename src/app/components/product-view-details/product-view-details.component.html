@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card image-container">
+                <img [src]="product.productImages[selectedProductIndex].url" >
+            </div>
+            <div>
+                <mat-grid-list cols="4" rowHeight="1:1">
+                    <mat-grid-tile
+                    *ngFor="let file of product.productImages let i = index;"
+                    >
+                      <div (click)="changeImage(i)" style="position: relative">            
+                        <img
+                          [src]="file.url"
+                          alt="Preview"
+                          class="preview-img"
+                        />
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+            </div>        
+        </div>
+        <div class="col-md-7 info">
+           <div>
+            <h1>{{product.productName}}</h1>
+           </div>
+           <br>
+           <div>
+            <h2>Main Features:</h2>
+            <!-- <p>{{product.longDescription}}</p> -->
+            <p [innerHTML]="product.shortDescription"></p>
+           </div>
+           <div>
+            <h3>Price: ৳{{product.discountPrice}} 
+                <span>
+                ৳{{product.regularPrice}}</span></h3> 
+           </div>
+           <div>
+            <button
+            (click)="buyProduct(product.productId)" 
+            mat-raised-button color="primary">Buy Now</button>
+            <button style="margin-left: 8px;"
+            (click)="addToCart(product.productId)" 
+            mat-raised-button color="accent">Add Cart</button>
+           </div>
+        </div>
+    </div>
+    <div class="longDescription">
+      <h1>Description:</h1>
+    <p [innerHTML]="product.longDescription"></p>
+    </div>
+</div>

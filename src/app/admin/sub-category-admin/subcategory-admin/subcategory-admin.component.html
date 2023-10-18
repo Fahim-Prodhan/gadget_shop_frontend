@@ -1,0 +1,97 @@
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-3">
+      
+      <mat-card class="add-form-mat">
+        <form (ngSubmit)="formSubmit()" >
+            <h1>
+                Add Brand  
+            </h1>
+            
+            <input
+              name="name"
+              [(ngModel)]="subcategory.name"
+              type="text"  placeholder="Enter the brand name">
+          <div class="button">
+            <mat-dialog-actions align="end">
+              <button class="save-button" mat-raised-button color="primary" type="submit">
+                Save
+              </button>
+              <button mat-raised-button mat-dialog-close color="warn">
+                Cancel
+              </button>
+            </mat-dialog-actions>
+          </div>
+        </form>
+      </mat-card>
+
+    <!-- {{subcategory | json}} -->
+   
+    </div>
+
+    <div class="col-md-9">
+      <mat-card class="title-mat">
+        <mat-card-title class="card-title">All {{category.title}} List</mat-card-title>
+      </mat-card>
+      <!-- <mat-form-field class="filter">
+                  <mat-label>Filter</mat-label>
+                  <input [(ngModel)]="searchText" matInput placeholder="search" #input>
+                </mat-form-field> -->
+
+                <div class="table-div">
+                  <table class="table-mat">
+                    <tr>
+                      <th>Serial No</th>
+                      <th>Title</th>
+                      <th>Update</th>
+                      <th>Delete</th>
+                      <th>Products</th>
+                      <th>Add Products</th>
+          
+                    </tr>
+                    <tr *ngFor="let s of subcategories | paginate: { itemsPerPage: pageSize, currentPage: page } ; let i = index">
+                      <td>{{i+1}}</td>
+          
+                      <td>{{s.name}}</td>
+                      <td>
+                        <button color="primary" mat-raised-button (click)=" openUpdateForm (s.subCategoryId)" class="edit-button">
+                          Edit<mat-icon>edit</mat-icon>
+                        </button>
+                      </td>
+          
+                      <td>
+                        <button color="warn" mat-raised-button (click)="deleteCategory(s.subCategoryId)">
+                          Delete <mat-icon>delete</mat-icon>
+                        </button>
+                      </td>
+                      <td>
+                        <button [routerLink]="'/admin/products/'+ s.subCategoryId" style="background-color: #008c36; color:	#e4e6eb" mat-raised-button>
+                          View <mat-icon>visibility</mat-icon>
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                        style="background-color: #474a6f; color:	#e4e6eb"
+                        mat-raised-button
+                        [routerLink]="'/admin/product/add/'+s.subCategoryId"
+                        >
+                          Add <mat-icon>add_circle</mat-icon>
+                        </button>
+                      </td>
+          
+                    </tr>
+                  </table>
+                </div>
+                
+          
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+    </div>
+
+
+      
+    </div>
+
+  </div>
+
+

@@ -1,0 +1,37 @@
+ <!-- Feature Products -->
+ <div class="product-title">
+    <h2>{{category.title}}</h2>
+    <p>Shop and Be Happy</p>
+</div>
+<section id="product1" class="section-p1">
+    
+    <div class="pro-box">
+        <div class="pro" *ngFor="let p of products">
+
+            <div class="descrip">
+                <img [src]="p.productImages[0].url" alt="">
+                <span>TechUniverse</span>
+                <a (click)="showProductDetail(p.productId)">
+                    <h5>{{p.productName}} </h5>
+                </a>
+                <!-- <p>{{p.shortDescription}}</p> -->
+            <p [innerHTML]="p.shortDescription"></p>
+
+                <div class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h4>৳ {{p.discountPrice}}
+                    <span style="font-size: 15px; text-decoration: line-through;">
+                        ৳ {{p.regularPrice}}</span>
+                </h4>
+            </div>
+            <a (click)="addToCart(p.productId)"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <span><a class="buyNow" (click)="buyProduct(p.productId)">Buy Now</a></span>
+        </div>
+
+    </div>
+</section>

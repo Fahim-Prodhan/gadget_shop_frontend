@@ -1,0 +1,78 @@
+
+.name{
+    
+    text-align: center;
+    padding: 20px;
+}
+  /* matcard.......... */
+
+  .content {
+    text-align: center;
+}  
+.content h1{
+    font-size: 30px;
+    
+}  
+
+.title h1{
+    text-align: center;
+    background-color: #0bcdfe;
+    padding:0 10px;
+    color: rgba(255, 255, 255, 0.909);
+    border-radius: 10px;
+}
+
+.c-title h1{
+    text-align: center;
+    background-color: #ff0faf;
+    padding:0 10px;
+    color: rgba(255, 255, 255, 0.909);
+    border-radius: 10px;
+}
+.u-title h1{
+    text-align: center;
+    background-color: #c49300fd;
+    padding:0 10px;
+    color: rgba(255, 255, 255, 0.909);
+    border-radius: 10px;
+}
+.b-title h1{
+    text-align: center;
+    background-color: #ff1f1f;
+    padding:0 10px;
+    color: rgba(255, 255, 255, 0.909);
+    border-radius: 10px;
+}
+.s-title h1{
+    text-align: center;
+    background-color: #5f1bff;
+    padding:0 10px;
+    color: rgba(255, 255, 255, 0.909);
+    border-radius: 10px;
+}
+.r-title h1{
+    text-align: center;
+    background-color: #ffae00;
+    padding:0 10px;
+    color: rgba(255, 255, 255, 0.909);
+    border-radius: 10px;
+}
+
+.bootstrap-wrapper{
+    padding: 20px 0;
+}
+.example-card{
+    margin-top: 10px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: #34364e;
+    color: #ffff;
+}
+mat-card-subtitle{
+    color: #d7d7d7;
+}
+button{
+    color: #91c4f4;
+    border: none;
+    background-color: #34364e;
+    cursor: pointer;
+}

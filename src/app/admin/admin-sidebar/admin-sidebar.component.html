@@ -1,0 +1,59 @@
+
+<head>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body class="hide-for-print">
+    <mat-card class="main-mat">
+        <div class="picture">
+        
+        </div>
+       
+        <div class="role">
+            <h3 >@{{login.getUser().authorities[0].authority}} <br><h3>{{login.getUser().firstName}} {{login.getUser().lastName}}</h3></h3>
+        </div>
+       <mat-divider></mat-divider>
+       
+       
+
+            <button mat-button 
+            [routerLink]="'/admin/dashboard'"           
+            ><mat-icon>dashboard</mat-icon>Dashboard</button>
+
+
+            <button mat-button 
+            [routerLink]="'/admin/add-admin'"           
+            ><mat-icon>person_add</mat-icon>Add Admin</button>
+
+
+            <button mat-button 
+            [routerLink]="'/admin/add-seller'"           
+            ><mat-icon>person_add</mat-icon>Add Seller</button>
+        
+            <button mat-button 
+            [routerLink]="'/admin/bus'"           
+            > <mat-icon>airport_shuttle</mat-icon>Bus List    </button>
+
+            <button mat-button 
+            [routerLink]="'/admin/schedule'"           
+            > <mat-icon>calendar_month</mat-icon>Schedule  </button>
+            
+            <button mat-button 
+            [routerLink]="'/admin/customer'"           
+            > <mat-icon>group</mat-icon>Customers</button>
+
+            <button mat-button 
+            [routerLink]="'/admin/routes'"           
+            > <mat-icon>book_online</mat-icon>Routes      </button>
+
+            <!-- <button mat-button 
+            [routerLink]="'/admin/bookings'"           
+            > <mat-icon>book_online</mat-icon>Bookings   </button> -->
+
+        
+        
+     
+     </mat-card>    
+</body>
+
+<!-- <span><img src="../../../../assets/image/person_add_FILL0_wght400_GRAD0_opsz48.png" ></span> -->
+        

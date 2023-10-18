@@ -1,0 +1,118 @@
+*{
+    color: #000;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffff;
+    margin: 0;
+    padding: 0;
+    
+}
+h2 {
+    font-size: 36px;
+    line-height: 44px;
+    color: #044bff;
+}
+.product-title{
+    box-shadow: 5px 5px 10px #656565;
+    padding: 5px 0px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-top: 3px;
+}
+.col-md-6{
+    /* border: 2px solid #eee; */
+    margin-bottom: 12px;
+}
+
+.container {
+    max-width: 550px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"]
+ {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+button {
+    background-color: #505050d1;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+    margin-left: 5px; 
+    font-size: 16px; 
+}
+.submit{
+    background-color: #00ad3d;
+    padding: 10px 20px;
+
+}
+
+button:hover {
+    background-color: #008a30;
+}
+
+/* Style for the input field */
+input[type="number"] {
+    width: 50px; /* Adjust width as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 30px;
+}
+select{
+    padding: 3px;
+    border-radius: 3px;
+}
+
+/* table css */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 15px;
+    /* background-color: #242526; */
+    color: #e4e6eb;  
+}
+table tr  {
+    padding: 10px 20px;
+    border: 0.5px solid #e4e6eb ;
+    text-align: center;
+  /* box-shadow: 5px 4px 10px rgb(4, 4, 4); */
+}
+table  td, th {
+    padding: 10px 20px;
+    /* border: 0.5px solid #e4e6eb ; */
+    text-align: center;
+  /* box-shadow: 5px 4px 10px rgb(4, 4, 4); */
+}
+img{
+    max-width: 50px;
+}
+
+
+

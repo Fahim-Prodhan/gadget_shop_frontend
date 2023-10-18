@@ -1,0 +1,93 @@
+.table-div{
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 15px;
+    background-color: #242526;
+    color: #e4e6eb;
+
+    
+
+}
+table tr td, th {
+    padding: 10px 20px;
+    /* border: 0.5px solid 	#e4e6eb ; */
+    text-align: center;
+    box-shadow: 5px 4px 10px rgb(4, 4, 4);
+
+}
+.demo-button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+.table-mat{
+  padding: 10px;
+  background-color: #242526;
+  box-shadow: 10px 10px 10px rgb(4, 4, 4);
+
+}
+
+.title-mat{
+  background-color: #242526; 
+  margin-bottom: 10px; margin-top: 10px;
+  box-shadow: 10px 10px 10px rgb(4, 4, 4);
+
+}
+
+
+
+
+
+
+
+/* .mat-mdc-raised-button.mat-accent {
+    --mdc-protected-button-container-color: #50577A;
+    --mdc-protected-button-label-text-color: #fff;
+} */
+
+.card-title{
+    text-align: center;
+    padding: 10px;  
+}
+.filter {
+    display: flex;
+    align-items:flex-end;
+    width: 20%;
+    margin-top: 10px;
+   
+}
+
+
+/* pagination css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+    list-style-type: none;
+  }
+  
+  .pagination li.active {
+    font-weight: bold;
+  }
+  
+  .pagination li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .pagination li.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  

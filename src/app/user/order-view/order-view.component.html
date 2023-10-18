@@ -1,0 +1,34 @@
+<div class="order-title">
+  <h2>Order List</h2>
+  <p>Shop and Be Happy</p>
+</div>
+<mat-card>
+    <table class="table-mat">
+      <thead>      
+        <tr>
+          <th>Serial</th>
+          <th>Image</th>
+          <th>Product Name</th>
+          <th>Contact Number</th>
+          <th>Date</th>
+          <th>Address</th>
+          <th>Amount</th>
+          <th>Quantity</th>
+          <th>Status</th>      
+      </tr>
+      </thead>   
+      <tbody>
+        
+        <tr *ngFor="let u of orderDetailsResponse; let i = index">
+          <td>{{i+1}}</td>
+          <td><img [src]="u.product.productImages[0].url"></td>
+          <td>{{u.product.productName}}</td>
+          <td>{{u.orderContactNumber}}</td>
+          <td>{{u.orderDate}}</td>
+          <td>{{u.orderAddress1}}</td>
+          <td>{{u.orderAmount}} ৳</td>
+          <td>{{u.orderQuantity}}</td>
+          <td>{{u.orderStatus}}</td>         
+      </tr>
+  </table>   
+  </mat-card>

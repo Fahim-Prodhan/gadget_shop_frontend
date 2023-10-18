@@ -1,0 +1,36 @@
+*{
+  overflow: hidden;
+}
+.bootstrap-wrapper{
+    color: black;
+}
+mat-card{
+    margin: 10px;
+    padding: 10px;
+    background-color: #fdfdfd
+}
+button{
+    margin: 12px 10px;
+}
+mat-card-content{
+    width: 600px;
+}
+
+h2 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #3d3d3d;
+  }
+  p{
+    color: #656565;
+  }
+  
+  .cart-title{
+    box-shadow: 5px 5px 10px #656565;
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-top: 3px;
+  }

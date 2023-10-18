@@ -1,0 +1,15 @@
+body{    
+    max-width: 97%;
+    padding: 0;
+    display: block;
+    margin:4% auto;   
+    min-height: 500px;
+}
+@media screen and (max-width: 900px){
+    body{
+        max-width: 97%;
+        padding: 0;
+        display: block;
+        margin:15% auto; 
+    }
+}

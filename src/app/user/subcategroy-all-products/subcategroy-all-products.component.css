@@ -1,0 +1,255 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;    
+    scroll-behavior: smooth;
+}
+a{
+    cursor:pointer;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #EEE;
+}
+
+h2 {
+    font-size: 36px;
+    line-height: 44px;
+    color: #222;
+}
+
+
+h4 {
+    font-size: 20px;
+    color: #242526;;
+}
+
+h5{
+
+    color: #242526;
+}
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+/* Feature Products  */
+
+.product-title{
+    box-shadow: 5px 5px 10px #656565;
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-top: 3px;
+}
+
+#product1 {
+    text-align: center;
+}
+
+#product1 .pro{
+    align-items: center;
+    width: 320px;
+    min-width: 250px;
+    border: 2px solid rgb(212, 212, 212);
+    padding: 10px 12px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.03);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+    
+}
+
+#product1 .pro-box{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+
+#product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.09)
+}
+
+#product1 .pro-box img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    height: 200px;
+}
+#product1 .pro-box .descrip {
+    text-align: start;
+    padding: 10px 0;
+
+}
+
+#product1 .pro-box .descrip span {
+    color: #999999;
+    font-size: 12px;
+}
+
+#product1 .pro-box .descrip h5 {
+    padding-top: 8px;
+    color: #070bfa;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#product1 .pro-box .descrip h5:hover {
+    color: #044BFF;
+    text-decoration: underline;
+}
+
+#product1 .pro-box .descrip i {
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}  
+
+#product1 .pro-box .descrip h4 {
+    padding: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(11, 177, 11);
+}
+
+#product1 .pro-box .cart {
+    background-color: #e8f6ea;
+    border-radius: 34px;
+    color: rgb(11, 177, 11);
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#product1 .pro-box .buyNow{
+    position: relative;
+    bottom: 10px;
+    right: 105px;
+    color: #fff;
+    text-decoration: none;
+    background-color: rgb(11, 177, 11);
+    padding: 7px;
+    border-radius: 7px;
+    cursor: pointer;
+
+}
+
+/* media quiry for iPad  */
+
+@media (max-width: 799px) {
+    #product1 .pro-box .buyNow{
+        position: relative;
+        bottom: 10px;
+        right: 80px;
+        color: #fff;
+        text-decoration: none;
+        background-color: rgb(11, 177, 11);
+        padding: 7px;
+        border-radius: 7px;
+    }
+   
+    #cartLogo{
+        display: none;
+    }
+    #hbody{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        /* background-image: url("img/bgM.jpg"); */
+        height: 75vh;
+        width: 100%;
+        background-size: cover;
+        background-position: top 30% right 50%;
+        padding: 0 80px;
+        flex-direction: column;
+    }
+    #product1 .pro-box { 
+         
+        justify-content: space-around;
+    }
+    #feature .fe-box1{
+        justify-content: space-around; 
+        }
+     #footerBanner h2 {
+        margin-bottom: 10px;
+        font-size: 40px;
+        }
+
+}
+
+/* media quiry for Mobile  */
+
+@media (max-width: 600px) {
+
+    #hbody{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        /* background-image: url("img/bgM.jpg"); */
+        height: 50vh;
+        width: 100%;
+        background-size: cover;
+        background-position: top 50% right 50%;
+        padding: 0 50px;
+        flex-direction: column;
+    }
+    
+    
+    #hbody h1 {
+        font-size: 30px;
+        color:rgb(11, 177, 11);
+        
+    }
+    h2 {
+        font-size: 37px;
+        line-height: 50px;
+        color: #E3E6F3;
+    }
+
+    #feature .fe-box1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+    #navbar.active{
+        right: -100px;
+    }
+
+    #footerBanner h2 {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    #product1 .pro-box {  
+        justify-content: center;
+    }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ecommerce</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div *ngIf="isAdmin" class="wrapper toolbar">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <div class="logo"><a href="#">TechUniverse</a></div>
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#" class="desktop-link">Category <i class="fas fa-caret-down"></i></a>
+            <input type="checkbox" id="show-services">
+            <label for="show-services">Category <i class="fas fa-caret-down"></i></label>
+            <ul>
+              <li><a href="/admin/category">All Categories</a></li>
+              <li *ngFor="let c of categories">
+                <a [href]="'/admin/subcategories/'+c.categoryId" id="more-extra" class="desktop-link">{{c.title}} <i class="fas fa-caret-right"></i></a>
+                <input type="checkbox" id="show-items">
+                <label for="show-items">{{c.title}} <i class="fas fa-caret-down"></i></label>
+                <ul>
+                  <li *ngFor="let s of c.subCategories"><a [href]="'/admin/products/'+s.subCategoryId">  {{s.name}} </a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li *ngFor="let c of categories;">
+            <a [href]="'/admin/subcategories/'+c.categoryId" class="desktop-link">{{c.title}}</a>
+            <input type="checkbox" id="show-features">
+            <label for="show-features">{{c.title}}</label>
+            <ul>
+              <li *ngFor="let s of c.subCategories"><a [href]="'/admin/products/'+s.subCategoryId">   {{s.name}}  </a></li>
+            </ul>
+          </li>
+          <li>
+            <a  *ngIf="logIn"
+              (click) = "redirectUser()"
+            > <i class="fa-solid fa-user-tie"></i>  {{login.getUser().username}}</a>	
+          </li>
+          
+          <li>
+            <a (click)="logout()"
+             *ngIf="logIn"
+            [routerLink]="'/login'">Logout <i class="fa-solid fa-right-to-bracket"></i></a>
+          </li>
+          <li>
+            <a *ngIf="!logIn"
+            [routerLink]="'/login'">Login/Register</a>
+          </li>
+        </ul>
+      </div>
+      <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+      <form action="#" class="search-box">
+        <input type="text" placeholder="Type Something to Search..." required>
+        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+      </form>
+    </nav>
+  </div>
+
+  <!-- if user not log in or for the normal user -->
+  <div *ngIf="!isAdmin" class="wrapper toolbar">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <div class="logo"><a href="#">TechUniverse</a></div>
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#" class="desktop-link">Category <i class="fas fa-caret-down"></i></a>
+            <input type="checkbox" id="show-services">
+            <label for="show-services">Category <i class="fas fa-caret-down"></i></label>
+            <ul>
+              <li><a href="#">All Categories</a></li>
+              <li *ngFor="let c of categories">
+                <a [href]="'/user/category/products/'+c.categoryId" id="more-extra" class="desktop-link">{{c.title}} <i class="fas fa-caret-right"></i></a>
+                <input type="checkbox" id="show-items">
+                <label for="show-items">{{c.title}} <i class="fas fa-caret-down"></i></label>
+                <ul>
+                  <li *ngFor="let s of c.subCategories"><a [href]="'/user/subcategory/products/'+s.subCategoryId"> {{s.name}} </a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li *ngFor="let c of categories;">
+            <a [href]="'/user/category/products/'+c.categoryId" class="desktop-link">{{c.title}}</a>
+            <input type="checkbox" id="show-features">
+            <label for="show-features">{{c.title}}</label>
+            <ul>
+              <li *ngFor="let s of c.subCategories"><a [href]="'/user/subcategory/products/'+s.subCategoryId">   {{s.name}}  </a></li>
+            </ul>
+          </li>
+          <li>
+            <a  *ngIf="logIn"
+              (click) = "redirectUser()"
+            > <i class="fa-solid fa-user-tie"></i>  {{login.getUser().username}}</a>	
+          </li>
+          
+          <li>
+            <a (click)="logout()"
+             *ngIf="logIn"
+            [routerLink]="'/login'">Logout <i class="fa-solid fa-right-to-bracket"></i></a>
+          </li>
+          <li>
+            <a *ngIf="!logIn"
+            [routerLink]="'/login'">Login/Register</a>
+          </li>
+          <li><a href="/user/cart"><i class="fa-solid fa-cart-shopping cart"></i>
+               <span class="cartCount">{{cartCount}}</span>
+              </a>
+          </li>
+          
+        </ul>
+      </div>
+      <!-- <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+      <form action="#" class="search-box">
+        <input type="text" placeholder="Type Something to Search..." required>
+        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+      </form> -->
+      
+    </nav>
+  </div>
+</body>
+</html>

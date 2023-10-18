@@ -1,0 +1,77 @@
+
+body {
+    background-image: url(../../../assets/img/laptop-notepad-blur.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    
+  }
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+}
+
+.box {
+	background-color: #edf2f486;
+	padding: 50px;
+	border-radius: 10px;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	font-size: 30px;
+	color: #ffffff;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+	background-color: #fff;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+	background-color: #195eff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	background-color: #333;
+}
+
+.login {
+	color: #333;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.login a {
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.login a:hover {
+	color: #fbfcff;
+}

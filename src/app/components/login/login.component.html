@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+	<html>
+<head>
+	<title>Login Page</title>
+</head>
+<body>
+	<form action="">
+		<div class="container">
+			<div class="box">
+				<h2>Login</h2>
+				<!-- {{loginData | json}} -->
+				
+				<form (ngSubmit)="loginSubmit()">
+					<input [(ngModel)]="loginData.username" name="username" type="text" placeholder="Username">
+					<input [(ngModel)]="loginData.password" name="password" type="password" placeholder="Password">
+					<button type="submit" class="btn">Login</button>
+				</form>
+				<p class="signup">Don't have an account? <a [routerLink]="'/signup'">Sign up here.</a></p>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
+
+

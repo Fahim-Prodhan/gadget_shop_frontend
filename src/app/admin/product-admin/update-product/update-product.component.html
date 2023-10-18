@@ -1,0 +1,115 @@
+<div class="bootstrap-wrapper">
+    <div class="row">
+      <div class="col-md-12">
+   
+          <div class="container-fluid">
+            <h1>Update Product</h1>
+            <div>
+              <!-- <label for="custom-file-input">Choose a file</label> -->
+              <input type="file" class="custom-file-input"  type="file"
+              multiple
+              value="select"
+              #selectFile
+              (change)="onFileSelected($event)">   
+            </div>
+            <form #productForm="ngForm" (ngSubmit)="updateProduct(productForm)">
+              <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input
+                  [(ngModel)]="product.productName"
+                  type="text"
+                  id="productName"
+                  name="productName"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="shortDescription">Short Description</label>
+                <!-- <textarea
+                  [(ngModel)]="product.shortDescription"
+                  id="shortDescription"
+                  name="shortDescription"
+                  required
+                ></textarea> -->
+                <ckeditor 
+                  [editor]="Editor" 
+                  name="shortDescription"
+                  [(ngModel)]="product.shortDescription"
+                  data="<p>Enter short description</p>">
+                </ckeditor>
+              </div>
+              
+  
+              <div class="form-group">
+                <label for="longDescription">Long Description</label>
+                <!-- <textarea
+                  [(ngModel)]="product.longDescription"
+                  id="longDescription"
+                  name="longDescription"
+                  required
+                ></textarea> -->
+                <ckeditor 
+                  [editor]="Editor" 
+                  name="longDescription"
+                  [(ngModel)]="product.longDescription"
+                  data="<p>Enter short description</p>">
+                </ckeditor>
+                </div>
+  
+              <div class="form-group">
+                <label for="regularPrice">Regular Price</label>
+                <input
+                  [(ngModel)]="product.regularPrice"
+                  type="number"
+                  id="regularPrice"
+                  name="regularPrice"
+                  step="0.1"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="discountPrice">Discount Price</label>
+                <input
+                  [(ngModel)]="product.discountPrice"
+                  type="number"
+                  id="discountPrice"
+                  name="discountPrice"
+                  step="0.1"
+                />
+              </div>
+              <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input
+                  [(ngModel)]="product.quantity"
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  step="1"
+                  required
+                />
+              </div>
+  
+              <button type="submit">Update Product</button>
+            </form>
+          </div>
+        
+      </div>
+      <div class="col-md-6">
+        <mat-grid-list cols="4" rowHeight="1:1">
+          <mat-grid-tile *ngFor="let file of product.productImages; let i = index">
+            <mat-icon class="btn-remove-image" (click)="removeImages(i)">cancel</mat-icon>
+            <div style="position: relative">
+                  
+              <img
+                [src]="file.url"
+                alt="Preview"
+                class="preview-img"
+              />
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+    <!-- {{product | json}} -->
+  </div>
+  

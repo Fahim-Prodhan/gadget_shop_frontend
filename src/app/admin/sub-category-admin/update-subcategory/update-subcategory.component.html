@@ -1,0 +1,32 @@
+<!-- <button mat-dialog-close mat-icon-button class="close-icon">
+    <mat-icon>close</mat-icon>
+</button> -->
+<form (ngSubmit)="updateSubCategory()">
+
+    <mat-dialog-content>
+       
+            <h1>Update SubCategory</h1>
+            <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input name="name"
+            [(ngModel)]="subcategory.name" matInput placeholder="Enter brand name">         
+            </mat-form-field>    
+
+            <mat-form-field appearance="fill">
+                <mat-label>Category</mat-label>
+                <mat-select name="title" [(ngModel)]="subcategory.categoryId">
+                  <mat-option *ngFor="let c of categories" [value]="c.categoryId">
+                  {{c.title}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button mat-raised-button mat-dialog-close color="warn" >Cancel</button>
+    </mat-dialog-actions>
+
+</form>
+
+

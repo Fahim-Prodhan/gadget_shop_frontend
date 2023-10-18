@@ -1,0 +1,121 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product-title">
+          <h2>Confirm Your Order</h2>
+          <p>Shop and Be Happy</p>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <body>
+          <div class="container">
+            <h2>Order Form</h2>
+            <form #orderForm="ngForm" (ngSubmit)="createTransactionAndplaceOrder(orderForm)">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input
+                        [(ngModel)]="orderDetails.fullName"
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="address1">Address Line 1</label>
+                    <input
+                        [(ngModel)]="orderDetails.address1"
+                        type="text"
+                        id="address1"
+                        name="address1"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address Line 2</label>
+                    <input
+                        [(ngModel)]="orderDetails.address2"
+                        type="text"
+                        id="address2"
+                        name="address2"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="orderContactNumber">Contact Number</label>
+                    <input
+                        [(ngModel)]="orderDetails.orderContactNumber"
+                        type="text"
+                        id="orderContactNumber"
+                        name="orderContactNumber"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="orderAltContactNumber">Alternate Contact Number</label>
+                    <input
+                        [(ngModel)]="orderDetails.orderAltContactNumber"
+                        type="text"
+                        id="orderAltContactNumber"
+                        name="orderAltContactNumber"
+                    />
+                </div>              
+
+              <button class="submit" type="submit">Place Order</button>
+            </form>
+          </div>
+        </body>
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <table class="table-mat">
+            <thead>      
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Quantity</th>
+                <th>Total</th>      
+            </tr>
+            </thead>   
+            <tbody>
+              
+              <tr *ngFor="let p of productDetails">
+                <td><img [src]="p.productImages[0].url"></td>
+                <td>{{p.productName}}</td>
+                <td>৳ {{p.discountPrice}}</td>
+                <td>
+                  <select
+                  #orderQuantity
+                  class="form-select"
+                  [ngModel]="getQuantityForProduct(p.productId)"
+                  (change)="onQuantityChanged(orderQuantity.value, p.productId)"
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </td>
+                <td>৳ {{getCalculatedTotal(p.productId,p.discountPrice)}}</td>         
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Total</td>
+              <td>৳ {{getGrandTotal()}}</td>
+            </tr>
+            </tbody>
+        </table>   
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

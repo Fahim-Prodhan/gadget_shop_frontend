@@ -1,0 +1,174 @@
+<section id="home" class="home-body">
+    <!-- first body -->
+    <section id="hbody">
+        <div class="bg-image"></div>
+        <div class="bg-text">
+            <h4>Best-price-with-best-offer</h4>
+            <h2>Higher quality product</h2>
+            <h1>Coupons code facility</h1>
+            <p>Save money using coupone code up to 50% !!</p>
+            <a href="#product1">
+                <button>Shop Now</button>
+            </a>
+        </div>
+    </section>
+
+    <!-- feature and Services -->
+    <div class="feature-title">
+        <h2>Our Features & Services</h2>
+        <p>We always try to give you the best Services</p>
+    </div>
+    <section id="feature" class="section-p1">
+        <div class="fe-box1">
+            <div class="fe-box">
+                <img src="../assets/img/features/f1.png" alt="" />
+                <h6>Free Shipping</h6>
+            </div>
+            <div class="fe-box">
+                <img src="../assets/img/features/f2.png" alt="" />
+                <h6>Deliver On Time</h6>
+            </div>
+            <div class="fe-box">
+                <img src="../assets/img/features/f3.png" alt="" />
+                <h6>Save Money</h6>
+            </div>
+            <div class="fe-box">
+                <img src="../assets/img/features/f6.png" alt="" />
+                <h6>24/7 Support</h6>
+            </div>
+        </div>
+    </section>
+    <!-- feature and Services -->
+    <div class="shop-cat-title">
+        <h2>Shop With Category</h2>
+    </div>
+    <section id="category" class="section-p1">
+        <div class="fe-box1">
+            <div onclick="location.href='http://localhost:4200/user/category/products/04f06cf4-cf1e-4fa6-9593-10f0a2b2c31c'"
+                class="cat-fe-box">
+                <img src="../../../assets/img/category/elec-11.png" alt="" />
+                <h6>Accessories</h6>
+            </div>
+            <div onclick="location.href='http://localhost:4200/user/category/products/4b698af3-9a5b-41fe-9433-f1081bac9b80'" class="cat-fe-box">
+                <img src="../../../assets/img/category/elec-4.png" alt="" />
+                <h6>Phone</h6>
+            </div>
+            <div onclick="location.href='http://localhost:4200/user/category/products/10a64a3e-d234-4b1b-9227-2c91ef96c149'"
+                class="cat-fe-box">
+                <img src="../../../assets/img/category/elec-6.png" alt="" />
+                <h6>Laptop</h6>
+            </div>
+            <div class="cat-fe-box">
+                <img src="../../../assets/img/category/elec-9.png" alt="" />
+                <h6>Monitor</h6>
+            </div>
+            <div onclick="location.href='http://localhost:4200/user/category/products/a8985005-9720-4086-a4f5-1a1b68d789c9'" class="cat-fe-box">
+                <img src="../../../assets/img/category/elec-10.png" alt="" />
+                <h6>Camera</h6>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Products -->
+    <div class="product-title">
+        <h2>Feature Products</h2>
+        <p>Shop and Be Happy</p>
+        <div class="search-container">
+            <input #searchKeyword (keyup)="searchProduct(searchKeyword.value)" name="searchKey" id="searchKey"
+                type="text" class="search-box" placeholder="Search" />
+        </div>
+    </div>
+    <section id="product1" class="section-p1">
+        <div class="pro-box">
+            <div class="pro" *ngFor="let p of products">
+                <div class="descrip">
+                    <img [src]="p.productImages[0].url" alt="" />
+                    <span>TechUniverse</span>
+                    <a (click)="showProductDetail(p.productId)">
+                        <h5>{{ p.productName }}</h5>
+                    </a>
+                    <!-- <p>{{p.shortDescription}}</p> -->
+                    <p [innerHTML]="p.shortDescription"></p>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>
+                        ৳ {{ p.discountPrice }}
+                        <span style="font-size: 15px; text-decoration: line-through">
+                            ৳ {{ p.regularPrice }}</span>
+                    </h4>
+                </div>
+                <a (click)="addToCart(p.productId)"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                <span><a class="buyNow" (click)="buyProduct(p.productId)">Buy Now</a></span>
+            </div>
+        </div>
+    </section>
+
+    <div *ngIf="showLoadButton">
+        <button id="load" (click)="loadMoreProduct()">View More</button>
+    </div>
+
+    <!-- Banner section  -->
+    <section id="footerBanner" class="section-m1">
+        <h4>Repair Services</h4>
+        <h2>Up to <span>30% off</span> - All Accessories</h2>
+        <button>Learn More</button>
+    </section>
+
+    <!-- new arrival section  -->
+    <section id="product1" class="section-p1">
+        <h2>New Arrival</h2>
+        <p>Stay With us</p>
+        <div class="pro-box">
+            <div class="pro" *ngFor="let p of newArrival">
+                <div class="descrip">
+                    <img [src]="p.productImages[0].url" alt="" />
+                    <span>TechUniverse</span>
+                    <a (click)="showProductDetail(p.productId)">
+                        <h5>{{ p.productName }}</h5>
+                    </a>
+                    <!-- <p>{{p.shortDescription}}</p> -->
+                    <p [innerHTML]="p.shortDescription"></p>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>
+                        ৳ {{ p.discountPrice }}
+                        <span style="font-size: 15px; text-decoration: line-through">
+                            ৳ {{ p.regularPrice }}</span>
+                    </h4>
+                </div>
+                <a (click)="addToCart(p.productId)"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                <span><a class="buyNow" (click)="buyProduct(p.productId)">Buy Now</a></span>
+            </div>
+        </div>
+    </section>
+    <!-- <div *ngIf="showLoadButton">
+        <button id="load" (click)="loadMoreProduct()">View More</button>
+    </div> -->
+
+    <section id="newsLetter" class="section-p1 section-m1">
+        <div class="newTxt">
+            <h4>Sign Up for Newsletter</h4>
+            <p>Get email update about our product & <span>special offer</span></p>
+        </div>
+        <div class="subForm">
+            <input type="email" name="email" id="email" placeholder=" Enter Email Here" />
+            <button>Subscribe</button>
+        </div>
+    </section>
+
+    <!-- <section id="copyright">
+        <div class="copytxt">
+            <p>Copyright @2022 Shape. All rights reserved</p>
+        </div>
+    </section> -->
+</section>
