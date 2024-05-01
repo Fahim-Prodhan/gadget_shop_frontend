@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 700px;
+    height: 100vh;
     
   }
   
@@ -16,7 +16,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 70vh;
+      height: 90vh;
   }
   
   .box {

@@ -57,6 +57,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CustomerListComponent } from './admin/customer-list/customer-list.component';
+import { ChangePasswordComponent } from './user/change-password/change-password.component';
 
 
 
@@ -96,6 +97,7 @@ import { CustomerListComponent } from './admin/customer-list/customer-list.compo
     OrderViewComponent,
     AdminOrderListComponent,
     CustomerListComponent,
+    ChangePasswordComponent,
 
   ],
   imports: [

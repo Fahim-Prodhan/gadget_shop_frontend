@@ -27,6 +27,7 @@ import { OrderViewComponent } from './user/order-view/order-view.component';
 import { OrderResolverService } from './services/order-resolver.service';
 import { AdminOrderListComponent } from './admin/admin-order-list/admin-order-list.component';
 import { CustomerListComponent } from './admin/customer-list/customer-list.component';
+import { ChangePasswordComponent } from './user/change-password/change-password.component';
 
 const routes: Routes = [
   {
@@ -131,13 +132,19 @@ const routes: Routes = [
         path:'orderConfirm',
         component:OrderConfirmPageComponent,
         canActivate:[userGuard]
-      },{
+      },
+      {
         path:'userOrders',
         component:OrderViewComponent,
         canActivate:[userGuard],
         resolve: {
           orderDetails: OrderResolverService,
         },
+      },
+      {
+        path:"change-password",
+        component:ChangePasswordComponent,
+        canActivate:[userGuard]
       }
     ],
   },

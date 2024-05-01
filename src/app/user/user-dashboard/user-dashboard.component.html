@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper" style="background-color: #18191A;">
+<div class="bootstrap-wrapper width">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -55,21 +55,20 @@
             <mat-card-header>
               <mat-card-title-group>
                 <mat-card-title class="s-title">
-                  <h1>Edit Profile</h1>
+                  <h1>Change Password</h1>
                 </mat-card-title>
-  
-                <mat-card-subtitle>Total Schedules</mat-card-subtitle>
+                <mat-card-subtitle>profile</mat-card-subtitle>
               </mat-card-title-group>
             </mat-card-header>
             <mat-card-content class="content">
-              <h1></h1>
+              <h1><mat-icon>lock</mat-icon></h1>
             </mat-card-content>
             <mat-card-actions>
-              <button [routerLink]="'/admin/schedule'" >View</button>
+              <button [routerLink]="'/user/change-password'" >Change</button>
             </mat-card-actions>
           </mat-card>
         </div>
-        <div class="col-md-3 offset-md-1 mt-15">
+        <!-- <div class="col-md-3 offset-md-1 mt-15">
           <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title-group>
@@ -88,7 +87,7 @@
               <button [routerLink]="'/admin/customer'">View</button>
             </mat-card-actions>
           </mat-card>
-        </div>
+        </div> -->
         <!-- <div class="col-md-3">
           <mat-card class="example-card">
             <mat-card-header>

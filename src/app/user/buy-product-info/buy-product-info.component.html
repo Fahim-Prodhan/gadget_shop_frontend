@@ -9,9 +9,9 @@
       </div>
       <div class="col-md-5">
         <body>
-          <div class="container">
+          <div class="container form">
             <h2>Order Form</h2>
-            <form #orderForm="ngForm" (ngSubmit)="createTransactionAndplaceOrder(orderForm)">
+            <form ngNativeValidate #orderForm="ngForm" (ngSubmit)="createTransactionAndplaceOrder(orderForm)">
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
                     <input
@@ -20,6 +20,7 @@
                         id="fullName"
                         name="fullName"
                         required
+                        placeholder="*required"
                     />
                 </div>
                 <div class="form-group">
@@ -30,6 +31,8 @@
                         id="address1"
                         name="address1"
                         required
+                        placeholder="*required"
+
                     />
                 </div>
                 <div class="form-group">
@@ -39,6 +42,8 @@
                         type="text"
                         id="address2"
                         name="address2"
+                        placeholder="*required"
+
                     />
                 </div>
                 <div class="form-group">
@@ -49,6 +54,8 @@
                         id="orderContactNumber"
                         name="orderContactNumber"
                         required
+                        placeholder="*required"
+
                     />
                 </div>
                 <div class="form-group">
@@ -58,6 +65,8 @@
                         type="text"
                         id="orderAltContactNumber"
                         name="orderAltContactNumber"
+                        placeholder="Optional"
+
                     />
                 </div>              
 

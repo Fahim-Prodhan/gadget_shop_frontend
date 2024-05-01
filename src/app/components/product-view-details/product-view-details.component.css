@@ -1,10 +1,9 @@
-*{
-    color: #000;
-}
 
 h1{
     margin-top: 15px;
-    color: #070bfa;
+    color: #5BBCFF;
+    text-align: center;
+    font-size: 36px;
 }
 h3{
     color: #03b000;
@@ -19,22 +18,6 @@ span{
     color:rgb(191, 191, 191);
 }
 
-
-.image-container{
-    height: 450px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    border: 2px solid #eee;
-}
-.image-container img{
-    display: block;
-    margin: auto;
-    padding: auto;
-    height: 450px;
-    
-   
-}
-
 .preview-img{
     width: 150px;
     height: 150px;
@@ -43,18 +26,36 @@ span{
     border: 2px solid #eee;
 
   }
-.longDescription{
-    display: block;
-    margin: 20px auto;
-    width: 100%;
-    padding: 20px;
-    box-shadow: 6px 6px  14px  #474747;
-}
-.longDescription h1
-{
-    text-align: center;
+
+.main{
+    padding: 24px 130px;
 }
 
+.image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #eee;
+   
+}
+.image-container img {
+    width: 450px;
+    padding: 24px;
+}
+.sub-pic{
+ display: flex;
+ gap: 16px;
+}
+
+hr{
+   border: 1px solid #eee;
+    margin: 24px 0;
+}
+
+.product-details{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
   
 @media screen and (max-width: 900px){
     .preview-img{
@@ -73,5 +74,18 @@ span{
     }
     .info{
     margin: 15px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .main{
+        padding: 24px 24px;
+    }
+    .image-container img {
+        width: 80%;
+        padding: 24px;
+    }
+    h1{
+        font-size: 24px;
     }
   }

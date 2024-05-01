@@ -1,6 +1,9 @@
-
+.width{
+    background-color: #f8f8f8de;
+    min-height: 500px;
+}
 .name{
-    
+    color: #000000;
     text-align: center;
     padding: 20px;
 }
@@ -11,6 +14,7 @@
 }  
 .content h1{
     font-size: 30px;
+    color: #34364e;
     
 }  
 
@@ -22,30 +26,24 @@
     border-radius: 10px;
 }
 
-.c-title h1{
-    text-align: center;
-    background-color: #ff0faf;
-    padding:0 10px;
-    color: rgba(255, 255, 255, 0.909);
-    border-radius: 10px;
-}
+
 .u-title h1{
     text-align: center;
-    background-color: #c49300fd;
+    background-color: #00e363fd;
     padding:0 10px;
     color: rgba(255, 255, 255, 0.909);
     border-radius: 10px;
 }
 .b-title h1{
     text-align: center;
-    background-color: #ff1f1f;
+    background-color: #1f6eff;
     padding:0 10px;
     color: rgba(255, 255, 255, 0.909);
     border-radius: 10px;
 }
 .s-title h1{
     text-align: center;
-    background-color: #5f1bff;
+    background-color: #ff491b;
     padding:0 10px;
     color: rgba(255, 255, 255, 0.909);
     border-radius: 10px;
@@ -63,16 +61,16 @@
 }
 .example-card{
     margin-top: 10px;
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
-    background-color: #34364e;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
     color: #ffff;
 }
 mat-card-subtitle{
-    color: #d7d7d7;
+    color: #5e5e5e;
 }
 button{
-    color: #91c4f4;
+    color: #158eff;
     border: none;
-    background-color: #34364e;
+   background-color: #fff;
     cursor: pointer;
 }

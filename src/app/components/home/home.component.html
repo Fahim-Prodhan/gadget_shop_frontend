@@ -41,6 +41,7 @@
     <!-- feature and Services -->
     <div class="shop-cat-title">
         <h2>Shop With Category</h2>
+        <p>Choose your desire category and shop happily</p>
     </div>
     <section id="category" class="section-p1">
         <div class="fe-box1">
@@ -83,12 +84,13 @@
             <div class="pro" *ngFor="let p of products">
                 <div class="descrip">
                     <img [src]="p.productImages[0].url" alt="" />
-                    <span>TechUniverse</span>
+                  
                     <a (click)="showProductDetail(p.productId)">
                         <h5>{{ p.productName }}</h5>
                     </a>
                     <!-- <p>{{p.shortDescription}}</p> -->
                     <p [innerHTML]="p.shortDescription"></p>
+                    <h3>Avaibale: {{p.quantity}} Piece</h3>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -102,6 +104,7 @@
                             ৳ {{ p.regularPrice }}</span>
                     </h4>
                 </div>
+                
                 <a (click)="addToCart(p.productId)"><i class="fa-solid fa-cart-shopping cart"></i></a>
                 <span><a class="buyNow" (click)="buyProduct(p.productId)">Buy Now</a></span>
             </div>
@@ -127,12 +130,12 @@
             <div class="pro" *ngFor="let p of newArrival">
                 <div class="descrip">
                     <img [src]="p.productImages[0].url" alt="" />
-                    <span>TechUniverse</span>
                     <a (click)="showProductDetail(p.productId)">
                         <h5>{{ p.productName }}</h5>
                     </a>
                     <!-- <p>{{p.shortDescription}}</p> -->
                     <p [innerHTML]="p.shortDescription"></p>
+                    <h3>Avaibale: {{p.quantity}} Piece</h3>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import baseUrl from './helper';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +35,16 @@ export class UserService {
  public countUser(){
   return this.http.get(`${baseUrl}/api/user/count`)
  }
+
+ public  changePassword(oldPassword: any, newPassword: any, confirmPassword: any){
+  let params = new HttpParams()
+    .set('oldPassword', oldPassword)
+    .set('newPassword', newPassword)
+    .set('confirmPassword', confirmPassword);
+    const options = { responseType: 'text' };
+
+  return this.http.post(`${baseUrl}/api/user/change-password`,{},{ params: params,
+    responseType: 'text'});
+}
 
 }
